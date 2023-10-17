@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой блог</title>
+</head>
+<body>
+    <h1>Мой блог</h1>
+    
+    <h2>Посты:</h2>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <h3>{{ post.name }}</h3>
+            <p>{{ post.message }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Добавить пост:</h2>
+    <form action="/add_post" method="post">
+        <label for="name">Имя:</label>
+        <input type="text" name="name" id="name" required><br>
+        <label for="message">Сообщение:</label>
+        <textarea name="message" id="message" required></textarea><br>
+        <input type="submit" value="Отправить">
+    </form>
+</body>
+</html>
